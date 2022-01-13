@@ -1,4 +1,4 @@
-export const RECEIVE_USERS = "RECIVE_USERS";
+export const RECEIVE_USERS = "RECEIVE_USERS";
 
 export function reveiveUsers(users) {
   return {

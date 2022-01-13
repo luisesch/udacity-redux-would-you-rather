@@ -1,4 +1,4 @@
-export const RECEIVE_QUESTIONS = "RECIVE_QUESTIONS";
+export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 
 export function reveiveQuestions(questions) {
   return {
