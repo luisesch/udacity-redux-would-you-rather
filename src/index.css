@@ -1,3 +1,11 @@
+/* Custom properties */
+
+:root {
+  --main-padding-left: 40px;
+}
+
+/* General */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -10,18 +18,25 @@ code {
 }
 
 h1 {
-  margin-left: 40px;
+  padding-left: var(--main-padding-left);
 }
 
 ul {
   margin: 0
 }
 
+.button {
+  border: 2px solid black;
+  padding: 5px 10px;
+  background: white;
+  border-radius: 5px 5px;
+}
+
 /* Navbar */
 
 .nav {
   display: flex;
-  padding: 15px 0;
+  padding: 15px var(--main-padding-left);
   list-style-type: none;
 }
 
@@ -67,7 +82,7 @@ ul {
 }
 
 .tabview-body {
-  padding: 40px;
+  padding: var(--main-padding-left);
 }
 
 .tabview-body ul {
@@ -80,4 +95,19 @@ ul {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 20px;
+}
+
+/* Add poll */
+
+.form-add {
+  padding-left: var(--main-padding-left);
+}
+
+.input-option {
+  display: block;
+  width: 400px;
+}
+
+.input-option + .input-option {
+  margin-top: 20px
 }
