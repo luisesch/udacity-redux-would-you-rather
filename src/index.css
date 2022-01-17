@@ -17,6 +17,27 @@ ul {
   margin: 0
 }
 
+/* Navbar */
+
+.nav {
+  display: flex;
+  padding: 15px 0;
+  list-style-type: none;
+}
+
+.nav-item {
+  margin-right: 20px
+}
+
+.nav-item a {
+  text-decoration: none
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* Pollsboard */
 
 .tabview-header {
