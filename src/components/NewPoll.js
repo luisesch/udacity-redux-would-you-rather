@@ -37,41 +37,41 @@ class NewPoll extends Component {
     return (
       <div>
         <h1>Add a new poll</h1>
-        <form className="form-add" onSubmit={this.handleSubmit}>
-          <p>Would you rather...</p>
-          <textarea
-            name="textOptionOne"
-            className="input-option"
-            placeholder="Enter option 1"
-            value={textOptionOne}
-            onChange={this.handleChange}
-            maxLength={200}
-          ></textarea>
-          <textarea
-            name="textOptionTwo"
-            className="input-option"
-            placeholder="Enter option 2"
-            value={textOptionTwo}
-            onChange={this.handleChange}
-            maxLength={200}
-          ></textarea>
-          <p>?</p>
-          <button
-            className="button"
-            type="submit"
-            disabled={textOptionOne === "" || textOptionTwo === ""}
-          >
-            Submit
-          </button>
-        </form>
+        <div className="container-content container-add">
+          <form onSubmit={this.handleSubmit}>
+            <p>Would you rather...</p>
+            <textarea
+              name="textOptionOne"
+              className="input-option"
+              placeholder="Enter option 1"
+              value={textOptionOne}
+              onChange={this.handleChange}
+              maxLength={200}
+            ></textarea>
+            <p>or</p>
+            <textarea
+              name="textOptionTwo"
+              className="input-option"
+              placeholder="Enter option 2"
+              value={textOptionTwo}
+              onChange={this.handleChange}
+              maxLength={200}
+            ></textarea>
+            <button
+              className="button"
+              type="submit"
+              disabled={textOptionOne === "" || textOptionTwo === ""}
+            >
+              SUBMIT
+            </button>
+          </form>
+          <div className="container-icon">
+            <i className="fa fa-question"></i>
+          </div>
+        </div>
       </div>
     );
   }
 }
-
-// function mapStateToProps({ questions }, { id }) {
-//   const question = questions[id];
-//   return { question };
-// }
 
 export default connect()(NewPoll);

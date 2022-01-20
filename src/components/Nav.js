@@ -15,6 +15,11 @@ export default function Nav() {
             New Poll
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink to="/leaderboard" activeClassName="active">
+            Leaderboard
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

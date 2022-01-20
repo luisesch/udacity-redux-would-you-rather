@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Poll from "./Poll";
+import PollsBoardEntry from "./PollsBoardEntry";
 import { POLLTABS } from "../utils/POLLSINFO";
 
 class PollsBoard extends Component {
@@ -50,7 +50,7 @@ class PollsBoard extends Component {
                   {questionIds
                     .filter((id) => hasUserAnswered(id, tab.answered))
                     .map((id) => (
-                      <Poll key={id} id={id} />
+                      <PollsBoardEntry key={id} id={id} />
                     ))}
                 </ul>
               )
