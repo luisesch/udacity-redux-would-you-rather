@@ -37,6 +37,12 @@ class NewPoll extends Component {
     if (toHome === true) {
       return <Redirect to="/" />;
     }
+
+    const charsLeft = {
+      textOptionOne: 100 - textOptionOne.length,
+      textOptionTwo: 100 - textOptionTwo.length,
+    };
+
     return (
       <div>
         <h1>Add a new poll</h1>
@@ -55,8 +61,11 @@ class NewPoll extends Component {
                       : textOptionTwo
                   }
                   onChange={this.handleChange}
-                  maxLength={200}
+                  maxLength={100}
                 ></textarea>
+                {charsLeft[option.name] <= 50 && (
+                  <div className="chars-left">{charsLeft[option.name]}</div>
+                )}
                 {index === 0 && <p>or</p>}
               </div>
             ))}

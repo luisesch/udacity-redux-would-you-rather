@@ -297,6 +297,13 @@ ul {
   margin-top: 20px
 }
 
+.chars-left {
+  height: 0px;
+  overflow: visible;
+  text-align: right;
+  font-size: 12px;
+}
+
 .container-icon {
   max-width: 400px;
   min-height: 280px;
