@@ -109,6 +109,18 @@ ul {
   cursor: pointer;
 }
 
+/* Error Page */
+
+.container-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-error svg {
+  font-size: 300px;
+}
+
 /* Pollsboard */
 
 .tabview-header {
