@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 class Nav extends Component {
   logout = () => {
     const { dispatch } = this.props;
-    dispatch(setAuthedUser(null));
+    dispatch(setAuthedUser(""));
   };
 
   render() {
