@@ -42,7 +42,7 @@ class LeaderboardEntry extends Component {
           <span>
             {" "}
             Total:
-            {" " + user.questions.length + Object.keys(user.answers).length}
+            {" " + (user.questions.length + Object.keys(user.answers).length)}
           </span>
         </div>
       </div>
