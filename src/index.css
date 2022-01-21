@@ -28,7 +28,9 @@ code {
 }
 
 h1 {
-  padding-left: var(--main-padding-left);
+  margin: 0;
+  padding: 20px 0 20px var(--main-padding-left);
+  background: white;
 }
 
 ul {
@@ -68,7 +70,9 @@ ul {
 /* Navbar */
 
 .nav {
-  display: flex; 
+  display: flex;
+  height: 50px;
+  border-bottom: 1px solid var(--color-light-gray)
 }
 
 .nav ul {
@@ -79,11 +83,12 @@ ul {
 }
 
 .nav-item {
-  margin-right: 20px
+  margin-right: 20px;
 }
 
 .nav-item a {
-  text-decoration: none
+  text-decoration: none;
+  color: black;
 }
 
 .nav-item a:hover {
@@ -100,9 +105,9 @@ ul {
 .btn-logout {
   width: 50px;
   height: 50px;
-  background: var(--color-light-gray);
-  border: 1px solid var(--color-medium-gray);
-  border-width: 0 0 1px 1px;
+  background: white;
+  border: 1px solid var(--color-light-gray);
+  border-width: 0 0 0 1px;
 }
 
 .btn-logout:hover {
@@ -127,14 +132,15 @@ ul {
   display: flex;
   list-style-type: none;
   padding: 0;
-  background: var(--color-light-gray)
+  background: var(--color-light-gray);
 }
 
 .tabview-item {
   flex: 1;
   padding: 15px;
   background: transparent;
-  border: none
+  border: none;
+  font-size: 18px;
 }
 
 .tabview-item + .tabview-item {
@@ -160,8 +166,7 @@ ul {
 .poll-short {
   display: block;
   background: var(--color-light-gray);
-  border: 1px solid var(--color-medium-gray);
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 20px;
   color: black;
   text-decoration: none;
@@ -248,23 +253,28 @@ ul {
 /* Add poll */
 
 .container-with-img {
+  width: 100%;
   display: flex;
   justify-content: space-around;
   background: var(--color-light-gray);
   padding: var(--main-padding-left)
 }
 
-.container-with-img div,
-.container-with-img form {
+.container-with-img > div,
+.container-with-img > form {
   flex: 1;
 }
 
-.container-with-img form {
+.container-with-img > form {
   display: flex;
   flex-direction: column;
   max-width: 500px;
   align-items: center;
   padding-right: 30px;
+}
+
+.container-with-img .add-form {
+  align-items: baseline;
 }
 
 .container-with-img div + form {
@@ -308,8 +318,7 @@ ul {
   display: flex;
   align-items: center;
   background: white;
-  border: 1px solid var(--color-medium-gray);
-  padding: 10px;
+  padding: 10px 20px;
   margin-bottom: 20px;
 }
 
@@ -319,7 +328,7 @@ ul {
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-right: 10px;
+  margin-right: 20px;
   font-size: 32px;
   color: black;
 }
@@ -350,6 +359,7 @@ ul {
 .avatar {
   width: 25px;
   border-radius: 50%;
+  border: 1px solid var(--color-light-gray);
   background: white;
   margin-right: 10px;
 }
