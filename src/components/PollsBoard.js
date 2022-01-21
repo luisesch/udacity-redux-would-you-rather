@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PollsBoardEntry from "./PollsBoardEntry";
-import { POLLTABS } from "../utils/POLLSINFO";
+import { POLLTABS } from "../utils/CONSTANTS";
 
 class PollsBoard extends Component {
   state = {

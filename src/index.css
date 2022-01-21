@@ -9,6 +9,7 @@
   --color-bronze: #bf8970;
   --color-light-gray: #f3f1f0;
   --color-medium-gray: #cfcac8;
+  --color-light-green: #98b698;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans");
@@ -127,6 +128,22 @@ ul {
 .container-vote {
   display: flex;
   justify-content: flex-start;
+  position: relative;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  padding: 10px;
+}
+
+.author p {
+  font-size: 12px;
+  margin: 0 10px 0 0;
+  display: inline;
 }
 
 .container-radio + .container-radio {
@@ -142,6 +159,45 @@ ul {
   display: flex;
   flex-direction: column;
   padding-right: 30px;
+}
+
+.container-result {
+  width: 100%;
+}
+
+.result {
+  display: flex;
+  position: relative;
+  background: white;
+  border: 1px solid var(--color-medium-gray);
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.total {
+  font-size: 10px;
+}
+
+.text-bar {
+  flex: 1;
+  justify-content: flex-start;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.bar {
+  height: 9px;
+  margin: 6px auto auto 0px;
+  background: blue;
+}
+
+.marker-vote {
+  position: absolute;
+  padding: 2px 8px;
+  top: -14px;
+  left: -13px;
+  transform: rotate(-24deg);
+  background: var(--color-light-green);
 }
 
 /* Add poll */

@@ -10,3 +10,5 @@ export const POLLTABS = [
     answered: true,
   },
 ];
+
+export const OPTIONS = ["optionOne", "optionTwo"];
