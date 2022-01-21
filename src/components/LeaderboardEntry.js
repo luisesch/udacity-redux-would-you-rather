@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 
 class LeaderboardEntry extends Component {
   render() {
@@ -7,9 +9,10 @@ class LeaderboardEntry extends Component {
     return (
       <div className="leaderboard-entry">
         {rank <= 3 ? (
-          <i
+          <FontAwesomeIcon
+            icon={faTrophy}
             className={
-              "fa fa-trophy rank " +
+              "rank " +
               (rank === 1
                 ? "first"
                 : rank === 2
@@ -18,9 +21,7 @@ class LeaderboardEntry extends Component {
                 ? "third"
                 : "")
             }
-          >
-            <span>{rank}</span>
-          </i>
+          />
         ) : (
           <p className="rank">{rank}</p>
         )}

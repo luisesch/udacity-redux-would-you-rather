@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleAddQuestion } from "../actions/questions";
 import { Redirect } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 
 class NewPoll extends Component {
   state = {
@@ -66,7 +68,7 @@ class NewPoll extends Component {
             </button>
           </form>
           <div className="container-icon">
-            <i className="fa fa-question"></i>
+            <FontAwesomeIcon icon={faQuestion} width={"100%"} />
           </div>
         </div>
       </div>

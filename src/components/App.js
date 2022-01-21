@@ -5,7 +5,7 @@ import { handleInitialData } from "../actions/shared";
 
 import Nav from "./Nav";
 import PollsBoard from "./PollsBoard";
-import Poll from "./Poll";
+import PollPage from "./PollPage";
 import NewPoll from "./NewPoll";
 import Leaderboard from "./Leaderboard";
 
@@ -21,7 +21,7 @@ class App extends Component {
         {this.props.loading === true ? null : (
           <div>
             <Route path="/" exact component={PollsBoard}></Route>
-            <Route path="/questions/:question_id" component={Poll}></Route>
+            <Route path="/questions/:question_id" component={PollPage}></Route>
             <Route path="/add" component={NewPoll}></Route>
             <Route path="/leaderboard" component={Leaderboard}></Route>
           </div>
