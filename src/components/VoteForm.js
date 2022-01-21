@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { handleSaveAnswer } from "../actions/questions";
 import { connect } from "react-redux";
 
 class VoteForm extends Component {
@@ -13,7 +14,8 @@ class VoteForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { selectedOption } = this.state;
-    this.props.onAdd(selectedOption);
+    const { dispatch } = this.props;
+    dispatch(handleSaveAnswer(this.props.question.id, selectedOption));
   };
 
   render() {

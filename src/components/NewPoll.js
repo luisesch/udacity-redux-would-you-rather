@@ -39,7 +39,7 @@ class NewPoll extends Component {
     return (
       <div>
         <h1>Add a new poll</h1>
-        <div className="container-content container-add">
+        <div className="container-content container-with-img">
           <form onSubmit={this.handleSubmit}>
             <p>Would you rather...</p>
             <textarea

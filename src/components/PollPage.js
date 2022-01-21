@@ -1,15 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { handleSaveAnswer } from "../actions/questions";
 import VoteForm from "./VoteForm";
 import VoteDisplay from "./VoteDisplay";
 
 class PollPage extends Component {
-  saveAnswer = (selectedOption) => {
-    const { dispatch, question } = this.props;
-    dispatch(handleSaveAnswer(question.id, selectedOption));
-  };
-
   render() {
     const { question, authedUser, author } = this.props;
 

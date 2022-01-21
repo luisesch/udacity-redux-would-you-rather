@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 
+import Login from "./Login";
 import Nav from "./Nav";
 import PollsBoard from "./PollsBoard";
 import PollPage from "./PollPage";
@@ -15,25 +16,27 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
-        {/* <LoadingBar/> */}
-        <Nav />
-        {this.props.loading === true ? null : (
-          <div>
+      <div>
+        {this.props.authedUser === null ? (
+          <Login />
+        ) : (
+          <Router>
+            {/* <LoadingBar/> */}
+            <Nav />
             <Route path="/" exact component={PollsBoard}></Route>
             <Route path="/questions/:question_id" component={PollPage}></Route>
             <Route path="/add" component={NewPoll}></Route>
             <Route path="/leaderboard" component={Leaderboard}></Route>
-          </div>
+          </Router>
         )}
-      </Router>
+      </div>
     );
   }
 }
 
 function mapStateToProps({ authedUser }) {
   return {
-    loading: authedUser === null,
+    authedUser,
   };
 }
 
