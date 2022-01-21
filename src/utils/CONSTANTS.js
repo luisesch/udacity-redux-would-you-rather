@@ -11,4 +11,15 @@ export const POLLTABS = [
   },
 ];
 
-export const OPTIONS = ["optionOne", "optionTwo"];
+export const OPTIONS = [
+  {
+    value: "optionOne",
+    name: "textOptionOne",
+    placeholder: "Enter option one",
+  },
+  {
+    value: "optionTwo",
+    name: "textOptionTwo",
+    placeholder: "Enter option two",
+  },
+];

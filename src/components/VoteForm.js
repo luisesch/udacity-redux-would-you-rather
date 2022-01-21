@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { handleSaveAnswer } from "../actions/questions";
 import { connect } from "react-redux";
+import { OPTIONS } from "../utils/CONSTANTS";
 
 class VoteForm extends Component {
   state = {
@@ -24,14 +25,17 @@ class VoteForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
-        <div className="container-radio">
-          <input type="radio" id="optionOne" value="optionOne" name="option" />
-          <label htmlFor="optionOne">{question.optionOne.text}</label>
-        </div>
-        <div className="container-radio">
-          <input type="radio" id="optionTwo" value="optionTwo" name="option" />
-          <label htmlFor="optionTwo">{question.optionTwo.text}</label>
-        </div>
+        {OPTIONS.map((option) => (
+          <div className="container-radio">
+            <input
+              type="radio"
+              id={option.value}
+              value={option.value}
+              name="option"
+            />
+            <label htmlFor={option.value}>{question[option.value].text}</label>
+          </div>
+        ))}
         <button
           className="button"
           type="submit"

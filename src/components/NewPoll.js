@@ -4,6 +4,7 @@ import { handleAddQuestion } from "../actions/questions";
 import { Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { OPTIONS } from "../utils/CONSTANTS";
 
 class NewPoll extends Component {
   state = {
@@ -42,23 +43,23 @@ class NewPoll extends Component {
         <div className="container-content container-with-img">
           <form onSubmit={this.handleSubmit}>
             <p>Would you rather...</p>
-            <textarea
-              name="textOptionOne"
-              className="input-option"
-              placeholder="Enter option 1"
-              value={textOptionOne}
-              onChange={this.handleChange}
-              maxLength={200}
-            ></textarea>
-            <p>or</p>
-            <textarea
-              name="textOptionTwo"
-              className="input-option"
-              placeholder="Enter option 2"
-              value={textOptionTwo}
-              onChange={this.handleChange}
-              maxLength={200}
-            ></textarea>
+            {OPTIONS.map((option, index) => (
+              <div>
+                <textarea
+                  name={option.name}
+                  className="input-option"
+                  placeholder={option.placeholder}
+                  value={
+                    option.name === "textOptionOne"
+                      ? textOptionOne
+                      : textOptionTwo
+                  }
+                  onChange={this.handleChange}
+                  maxLength={200}
+                ></textarea>
+                {index === 0 && <p>or</p>}
+              </div>
+            ))}
             <button
               className="button"
               type="submit"

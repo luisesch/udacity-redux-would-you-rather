@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PollsBoardEntry from "./PollsBoardEntry";
 import { POLLTABS } from "../utils/CONSTANTS";
+import { hasUserAnswered } from "../utils/helpers";
+
+import PollsBoardEntry from "./PollsBoardEntry";
 
 class PollsBoard extends Component {
   state = {
@@ -17,10 +19,6 @@ class PollsBoard extends Component {
 
   render() {
     const { userDetails, questionIds } = this.props;
-
-    function hasUserAnswered(questionId, answered) {
-      return userDetails.answers.hasOwnProperty(questionId) === answered;
-    }
 
     return (
       <div>
@@ -48,7 +46,11 @@ class PollsBoard extends Component {
               this.state.openTab === tab.value && (
                 <ul key={tab.value}>
                   {questionIds
-                    .filter((id) => hasUserAnswered(id, tab.answered))
+                    .filter((id) =>
+                      tab.answered
+                        ? hasUserAnswered(id, userDetails)
+                        : !hasUserAnswered(id, userDetails)
+                    )
                     .map((id) => (
                       <PollsBoardEntry key={id} id={id} />
                     ))}

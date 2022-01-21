@@ -2,19 +2,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import { hasUserAnswered } from "../utils/helpers";
+
 import VoteForm from "./VoteForm";
 import VoteDisplay from "./VoteDisplay";
 
 class PollPage extends Component {
   render() {
-    const { question, authedUser, author } = this.props;
-
-    function hasUserAnswered() {
-      return (
-        question.optionOne.votes.includes(authedUser) ||
-        question.optionTwo.votes.includes(authedUser)
-      );
-    }
+    const { question, userDetails, author } = this.props;
 
     return (
       <div>
@@ -27,7 +22,7 @@ class PollPage extends Component {
           <div>
             <h1>Would you rather...</h1>
             <div className="container-content container-vote">
-              {hasUserAnswered() ? (
+              {hasUserAnswered(question.id, userDetails) ? (
                 <VoteDisplay id={question.id} />
               ) : (
                 <VoteForm id={question.id} onAdd={this.saveAnswer} />
@@ -52,8 +47,9 @@ class PollPage extends Component {
 function mapStateToProps({ questions, authedUser, users }, props) {
   const { question_id } = props.match.params;
   const question = questions[question_id];
+  const userDetails = users[authedUser];
   const author = question !== undefined ? users[question.author] : null;
-  return { question, authedUser, author };
+  return { question, userDetails, author };
 }
 
 export default connect(mapStateToProps)(PollPage);
