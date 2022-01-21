@@ -26,7 +26,7 @@ class VoteForm extends Component {
     return (
       <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
         {OPTIONS.map((option) => (
-          <div className="container-radio">
+          <div key={option.value} className="container-radio">
             <input
               type="radio"
               id={option.value}

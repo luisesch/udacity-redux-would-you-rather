@@ -267,6 +267,10 @@ ul {
   padding-right: 30px;
 }
 
+.container-with-img div + form {
+  margin-left: 30px;
+}
+
 .input-option {
   display: block;
   width: 400px;

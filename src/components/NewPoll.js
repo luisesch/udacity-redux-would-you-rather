@@ -44,7 +44,7 @@ class NewPoll extends Component {
           <form onSubmit={this.handleSubmit}>
             <p>Would you rather...</p>
             {OPTIONS.map((option, index) => (
-              <div>
+              <div key={option.value}>
                 <textarea
                   name={option.name}
                   className="input-option"

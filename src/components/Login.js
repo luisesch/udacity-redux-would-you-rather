@@ -32,13 +32,15 @@ class Login extends Component {
             <FontAwesomeIcon icon={faUser} width={"100%"} />
           </div>
           <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
-            <label for="users">
+            <label htmlFor="users">
               Please select a user to log in and see the polls...
             </label>
             <select name="users" id="users" className="select">
               <option value="">Select a user</option>
               {userIds.map((user) => (
-                <option value={user}>{user}</option>
+                <option key={user} value={user}>
+                  {user}
+                </option>
               ))}
             </select>
             <button
